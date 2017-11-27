@@ -1,0 +1,47 @@
+@var:50px;
+@font-family: Tahoma;
+
+*,html,body{
+margin:0;
+padding:0;
+}
+
+h1, p {margin:0;}
+
+#un{
+    background-color:antiquewhite;
+    border: solid red 5px;
+    font:0.5em/1.5em @font-family;
+    padding:15px;
+    margin:0 auto;
+}
+
+#gif{
+    margin-top: 250px;
+    margin:0 auto;
+    display: block;
+    border: red 20px dotted;
+    img {
+    	rwidth: 100%; 
+    }     
+}
+
+.wrapper{
+	margin: 0 auto;
+}
+
+.wrapper-mixin(@width: auto){
+	&:extend(.wrapper);
+	width: @width;	
+}
+
+@media screen and (min-width: 50rem){
+	.wrapper{
+		.wrapper-mixin(50rem);
+		font-size: 1.95em;
+	}	
+}
+	
+@media screen and (min-width: 64rem){
+	.wrapper{.wrapper-mixin(64rem);}
+}
